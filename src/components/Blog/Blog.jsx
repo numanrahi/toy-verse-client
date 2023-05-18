@@ -17,6 +17,19 @@ const Blog = () => {
                     <span className='ans-title'>Client-side storage:</span> Store access tokens securely in memory and avoid persistent storage such as local storage or cookies. For refresh tokens, use secure storage methods such as secure HTTP-only cookies or encrypted storage options provided by the platform.
                 </div>
             </section>
+            {/* qna-2 */}
+            <section className='qna m-5 p-5'>
+                <div className='question'>Compare SQL and NoSQL databases?</div>
+                <div>
+                    <ul>
+                        <li className='py-2'>SQL databases are relational, and NoSQL databases are non-relational.</li>
+                        <li className='py-2'>SQL databases use structured query language (SQL) and have a predefined schema. NoSQL databases have dynamic schemas for unstructured data.</li>
+                        <li className='py-2'>SQL databases are vertically scalable, while NoSQL databases are horizontally scalable.</li>
+                        <li className='py-2'>SQL databases are table-based, while NoSQL databases are document, key-value, graph, or wide-column stores.</li>
+                        <li className='py-2'>SQL databases are better for multi-row transactions, while NoSQL is better for unstructured data like documents or JSON.</li>
+                    </ul>
+                </div>
+            </section>
         </div>
     );
 };
