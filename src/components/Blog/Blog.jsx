@@ -1,9 +1,16 @@
 import React from 'react';
 import './Blog.css'
+import Marquee from "react-fast-marquee";
+import { Link } from 'react-router-dom';
 
 const Blog = () => {
     return (
         <div>
+            <div className='m-5'>
+                <Marquee>
+                    <div className='fs-2'>Blog page written by Abdullah Al Numan Rahi</div>
+                </Marquee>
+            </div>
             {/* qna-1 */}
             <section className='qna m-5 p-5'>
                 <div className='question'>What is an access token and refresh token? How do they work and where should we store them on the client-side?</div>
@@ -40,6 +47,14 @@ const Blog = () => {
                     <span className='ans-title'>Nest JS :</span>Nest.js is a server-side web application framework for Node.js inspired by Angular. It promotes a modular and structured approach to building scalable and maintainable applications. It uses TypeScript, dependency injection, decorators, and metadata to provide a robust and opinionated framework for server-side development. Nest.js offers features such as middleware, pipes, built-in routing, exception handling, and support for various databases. It is suitable for developing complex and enterprise-level applications.
                 </div>
             </section>
+            {/* qna-4 */}
+            <section className='qna m-5 p-5'>
+                <div className='question'>What is MongoDB aggregate and how does it work ?</div>
+                <div className='pt-4'>
+                    The MongoDB Aggregation Framework is a feature that allows you to perform advanced data processing and analysis on MongoDB collections. It works by performing a sequence of processing steps, such as matching, projecting, grouping, sorting and so on. Each stage transforms the data and passes it on to the next stage. It lets you perform complex queries and aggregations in a controlled manner, enabling sophisticated data manipulation and analysis. The overall framework works on the server-side and efficiently processes large datasets without transferring all the data to the client.
+                </div>
+            </section>
+            <div className='text-center my-3 pb-5'>&copy;<Link className='text-decoration-none' to="https://github.com/numanrahi">Abdullah Al Numan Rahi</Link></div>
         </div>
     );
 };
