@@ -13,6 +13,7 @@ import Auth from './LayOut/Auth';
 import Register from './components/Register/Register';
 import AuthProvider from './Providers/AuthProvider';
 import PageNotFound from './LayOut/pageNotFound';
+import Blog from './components/Blog/Blog';
 
 const router = createBrowserRouter([
   {
@@ -39,7 +40,7 @@ const router = createBrowserRouter([
   },
   {
     path: '/blog',
-    element: <div>Blog</div>
+    element: <Blog></Blog>
   },
   {
     path :'*',

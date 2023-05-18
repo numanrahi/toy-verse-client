@@ -1,0 +1,17 @@
+.qna{
+    border: 1px solid lightblue;
+    border-radius: 8px;
+}
+
+.qna:hover{
+    background-color: rgb(235, 219, 198);
+}
+
+.question{
+    font-weight: 500;
+    font-size: 25px;
+    text-align: center;
+}
+.ans-title{
+    color: darkcyan;
+}
