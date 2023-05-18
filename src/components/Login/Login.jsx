@@ -20,7 +20,7 @@ const Login = () => {
                 <div>Dont have an account? Please <Link to="/register">Register</Link></div>
                 <br />
                 <Button className="w-100 my-3" variant="primary" type="submit">
-                    Submit
+                    Login
                 </Button>
             </Form>
         </div>
