@@ -5,7 +5,7 @@ const NavBar = () => {
     return (
         <div className="d-flex justify-content-around my-3 py-3">
             <div className="d-flex fs-2">
-                <div>Name</div>
+                <div>ToyVerse</div>
             </div>
 
             <div className="d-flex gap-4">
@@ -22,11 +22,11 @@ const NavBar = () => {
                     <Link className="fs-4 text-decoration-none">Add A Toy</Link>
                 </div>
                 <div>
-                    <Link className="fs-4 text-decoration-none">Blogs</Link>
+                    <Link to="/blog" className="fs-4 text-decoration-none">Blogs</Link>
                 </div>
             </div>
             <div>
-                <Link className="fs-4 text-decoration-none">Login</Link>
+                <Link to="/login" className="fs-4 text-decoration-none"><button className="btn btn-primary">Login</button></Link>
             </div>
         </div>
     );
