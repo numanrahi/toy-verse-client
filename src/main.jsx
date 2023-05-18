@@ -12,6 +12,7 @@ import Login from './components/Login/Login';
 import Auth from './LayOut/Auth';
 import Register from './components/Register/Register';
 import AuthProvider from './Providers/AuthProvider';
+import PageNotFound from './LayOut/pageNotFound';
 
 const router = createBrowserRouter([
   {
@@ -39,6 +40,10 @@ const router = createBrowserRouter([
   {
     path: '/blog',
     element: <div>Blog</div>
+  },
+  {
+    path :'*',
+    element: <PageNotFound></PageNotFound>
   }
 ]);
 
