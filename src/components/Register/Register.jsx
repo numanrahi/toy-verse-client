@@ -1,11 +1,14 @@
 import { useContext } from "react";
 import { Button, Form } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Providers/AuthProvider";
+import Swal from "sweetalert2";
 // import { AuthContext } from "../../Providers/AuthProvider";
 
 const Register = () => {
     const { createUser, user } = useContext(AuthContext)
+
+    const navigate = useNavigate()
 
     const handleRegister = event => {
         event.preventDefault();
@@ -20,22 +23,19 @@ const Register = () => {
             .then(result => {
                 const createdUser = result.user;
                 console.log(createdUser);
+                navigate('/main')
+                if (createdUser) {
+                    Swal.fire({
+                        title: 'Success!',
+                        text: 'Registration Successfully',
+                        icon: 'success',
+                        confirmButtonText: 'Cool'
+                    })
+                }
             })
             .catch(error => {
                 console.log(error);
             })
-
-        // createUser(email, password)
-        //     .then(result => {
-        //         const createdUser = result.user;
-        //         console.log(createdUser);
-        //         // toast('User Created Successfully')
-        //         // form.reset()
-        //         // navigate('/')
-        //     })
-        //     .catch(error => {
-        //         // toast.error(error.message)
-        //     })
     }
 
     return (
