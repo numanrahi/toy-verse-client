@@ -5,7 +5,7 @@ const Auth = () => {
     return (
         <div>
             <NavBar></NavBar>
-            <Outlet></Outlet>
+            <div style={{maxWidth: '1200px'}} className='mx-auto'><Outlet></Outlet></div>
         </div>
     );
 };
