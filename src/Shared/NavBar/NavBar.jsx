@@ -44,7 +44,7 @@ const NavBar = () => {
                                 <Link className="fs-4 text-decoration-none">My Toys</Link>
                             </div>
                             <div>
-                                <Link className="fs-4 text-decoration-none">Add A Toy</Link>
+                                <Link to="/addatoy" className="fs-4 text-decoration-none">Add A Toy</Link>
                             </div>
                         </>
                     )
@@ -65,7 +65,7 @@ const NavBar = () => {
                                         data-tooltip-content={user.displayName}
                                         className="fs-2 title-text"
                                     >
-                                        <img className="rounded-circle" src={url} alt="" />
+                                        <img className="custom-img" src={url} alt="" />
 
                                     </div> :
                                     <div>

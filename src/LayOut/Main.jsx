@@ -10,7 +10,7 @@ const Main = () => {
             <NavBar></NavBar>
             <Banner></Banner>
             <KidsToys></KidsToys>
-            {/* <Gallary></Gallary> */}
+            <Gallary></Gallary>
             <Outlet></Outlet>
         </div>
     );

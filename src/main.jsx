@@ -2,6 +2,8 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import './index.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import {
   createBrowserRouter,
   Navigate,
@@ -14,6 +16,7 @@ import Register from './components/Register/Register';
 import AuthProvider from './Providers/AuthProvider';
 import PageNotFound from './LayOut/pageNotFound';
 import Blog from './components/Blog/Blog';
+import AddAToy from './components/AddAToy/AddAToy';
 
 const router = createBrowserRouter([
   {
@@ -36,6 +39,10 @@ const router = createBrowserRouter([
         path: '/blog',
         element: <Blog></Blog>
       },
+      {
+        path: '/addatoy',
+        element: <AddAToy></AddAToy>
+      }
     ]
   },
   {
@@ -52,6 +59,9 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <AuthProvider><RouterProvider router={router} /></AuthProvider>
+    <AuthProvider>
+      <RouterProvider router={router} />
+      <ToastContainer></ToastContainer>
+    </AuthProvider>
   </React.StrictMode>,
 )

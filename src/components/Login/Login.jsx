@@ -5,6 +5,7 @@ import { useContext } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
 import { signInWithPopup } from "firebase/auth";
 import Swal from "sweetalert2";
+import { toast } from "react-toastify";
 
 const Login = () => {
 
@@ -36,7 +37,7 @@ const Login = () => {
                 }
             })
             .catch(error => {
-                console.log(error);
+                toast.error(error.message)
             })
     }
 
@@ -56,7 +57,7 @@ const Login = () => {
                 }
             })
             .catch(error => {
-                console.log(error);
+                toast.error(error.message)
             })
     }
 

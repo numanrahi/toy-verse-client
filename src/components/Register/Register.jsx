@@ -3,6 +3,7 @@ import { Button, Form } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Providers/AuthProvider";
 import Swal from "sweetalert2";
+import { toast } from "react-toastify";
 // import { AuthContext } from "../../Providers/AuthProvider";
 
 const Register = () => {
@@ -34,7 +35,7 @@ const Register = () => {
                 }
             })
             .catch(error => {
-                console.log(error);
+                toast.error(error.message)
             })
     }
 
