@@ -45,6 +45,7 @@ const Login = () => {
             .then(result => {
                 const loggedUser = result.user;
                 console.log(loggedUser);
+                navigate(from, { replace: true })
                 if (loggedUser) {
                     Swal.fire({
                         title: 'Success!',

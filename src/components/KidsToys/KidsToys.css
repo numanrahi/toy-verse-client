@@ -1,0 +1,7 @@
+img-border-custom {
+    border: 5px solid white;
+    transition: .5s;
+}
+.body{
+    background-color: rgb(187, 129, 241);
+}

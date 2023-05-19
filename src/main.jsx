@@ -31,19 +31,20 @@ const router = createBrowserRouter([
       {
         path: '/register',
         element: <Register></Register>
-      }
+      },
+      {
+        path: '/blog',
+        element: <Blog></Blog>
+      },
     ]
   },
   {
     path: '/main',
     element: <Main></Main>
   },
+
   {
-    path: '/blog',
-    element: <Blog></Blog>
-  },
-  {
-    path :'*',
+    path: '*',
     element: <PageNotFound></PageNotFound>
   }
 ]);
