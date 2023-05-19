@@ -2,8 +2,10 @@ import React from 'react';
 import './Blog.css'
 import Marquee from "react-fast-marquee";
 import { Link } from 'react-router-dom';
+import useTitle from '../../hooks/useTitle';
 
 const Blog = () => {
+    useTitle('Blog')
     return (
         <div>
             <div className='m-5'>

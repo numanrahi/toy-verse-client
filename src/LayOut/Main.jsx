@@ -3,8 +3,10 @@ import NavBar from "../Shared/NavBar/NavBar";
 import Banner from "../components/Banner/Banner";
 import Gallary from "../components/Gallary/Gallary";
 import KidsToys from "../components/KidsToys/KidsToys";
+import useTitle from "../hooks/useTitle";
 
 const Main = () => {
+    useTitle('Home')
     return (
         <div>
             <NavBar></NavBar>

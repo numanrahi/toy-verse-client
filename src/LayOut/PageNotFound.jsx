@@ -1,7 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import useTitle from '../hooks/useTitle';
 
 const PageNotFound = () => {
+    useTitle('404')
     return (
         <div>
             <div>

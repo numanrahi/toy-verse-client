@@ -4,10 +4,11 @@ import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Providers/AuthProvider";
 import Swal from "sweetalert2";
 import { toast } from "react-toastify";
-// import { AuthContext } from "../../Providers/AuthProvider";
+import useTitle from "../../hooks/useTitle";
 
 const Register = () => {
     const { createUser, user } = useContext(AuthContext)
+    useTitle('Register')
 
     const navigate = useNavigate()
 
@@ -38,7 +39,6 @@ const Register = () => {
                 toast.error(error.message)
             })
     }
-
     return (
         <div className="row">
             <div className="col-md-5 col-11 mx-auto">

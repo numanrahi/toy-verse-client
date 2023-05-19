@@ -6,6 +6,7 @@ import { AuthContext } from "../../Providers/AuthProvider";
 import { signInWithPopup } from "firebase/auth";
 import Swal from "sweetalert2";
 import { toast } from "react-toastify";
+import useTitle from "../../hooks/useTitle";
 
 const Login = () => {
 
@@ -14,6 +15,7 @@ const Login = () => {
     const navigate = useNavigate()
     const location = useLocation()
     const from = location.state?.from?.pathname || '/'
+    useTitle('Login')
 
     const handleLogin = event => {
         event.preventDefault()
