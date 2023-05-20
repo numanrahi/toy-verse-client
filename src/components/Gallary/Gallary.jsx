@@ -19,7 +19,7 @@ const Gallery = () => {
             .then((res) => res.json())
             .then((data) => setPhotos_two(data));
     }, []);
-    console.log(photos_two);
+    
     return (
         <div>
             <div className="gallery-text my-5 fs-3 w-75 mx-auto text-center">
