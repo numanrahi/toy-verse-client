@@ -19,12 +19,10 @@ const Register = () => {
         const photo = form.photo.value;
         const email = form.email.value;
         const password = form.password.value;
-        console.log(name, email, password, photo);
 
         createUser(email, password)
             .then(result => {
                 const createdUser = result.user;
-                console.log(createdUser);
                 navigate('/main')
                 if (createdUser) {
                     Swal.fire({

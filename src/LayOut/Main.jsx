@@ -1,9 +1,9 @@
 import { Outlet } from "react-router-dom";
 import NavBar from "../Shared/NavBar/NavBar";
 import Banner from "../components/Banner/Banner";
-import Gallary from "../components/Gallary/Gallary";
 import KidsToys from "../components/KidsToys/KidsToys";
 import useTitle from "../hooks/useTitle";
+import Gallery from "../components/Gallary/Gallary";
 
 const Main = () => {
     useTitle('Home')
@@ -12,7 +12,7 @@ const Main = () => {
             <NavBar></NavBar>
             <Banner></Banner>
             <KidsToys></KidsToys>
-            <Gallary></Gallary>
+            <Gallery></Gallery>
             <Outlet></Outlet>
         </div>
     );

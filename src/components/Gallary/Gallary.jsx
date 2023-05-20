@@ -1,30 +1,44 @@
-import React from 'react';
+import React, { useEffect, useState } from "react";
+// import "./Gallery.css";
 import Marquee from "react-fast-marquee";
-import './Gallary.css'
+import GalleryOne from "./GalleryOne/GalleryOne";
+import GalleryTwo from "./GalleryTwo/GalleryTwo";
 
-const Gallary = () => {
+const Gallery = () => {
+    const [photos_one, setPhotos_one] = useState([]);
+    const [photos_two, setPhotos_two] = useState([]);
+
+    useEffect(() => {
+        fetch("http://localhost:5000/gallery-one")
+            .then((res) => res.json())
+            .then((data) => setPhotos_one(data));
+    }, []);
+
+    useEffect(() => {
+        fetch("http://localhost:5000/gallery-two")
+            .then((res) => res.json())
+            .then((data) => setPhotos_two(data));
+    }, []);
+    console.log(photos_two);
     return (
-        <div className='mt-5 pt-5'>
-            <div className='fs-2 mt-5 text-center'>Innocence Unveiled: A Journey Through Time</div>
-            <Marquee 
-            direction='down'
-            className='text-danger'
-            >
-                <img className='img-fluid gallary-img' src="https://media.istockphoto.com/id/1296677357/vector/convertible-super-sports-car-vehicle-transportation-bright-color-for-coloring-page-children.jpg?s=612x612&w=0&k=20&c=BkZCgGFRylr72aKQ9eoRfn4-N3RRne7c0bfxmJ9_g2Y=" alt="" />
-                <img className='img-fluid gallary-img' src="https://media.istockphoto.com/id/1296677357/vector/convertible-super-sports-car-vehicle-transportation-bright-color-for-coloring-page-children.jpg?s=612x612&w=0&k=20&c=BkZCgGFRylr72aKQ9eoRfn4-N3RRne7c0bfxmJ9_g2Y=" alt="" />
-                <img className='img-fluid gallary-img' src="https://media.istockphoto.com/id/1296677357/vector/convertible-super-sports-car-vehicle-transportation-bright-color-for-coloring-page-children.jpg?s=612x612&w=0&k=20&c=BkZCgGFRylr72aKQ9eoRfn4-N3RRne7c0bfxmJ9_g2Y=" alt="" />
-                <img className='img-fluid gallary-img' src="https://media.istockphoto.com/id/1296677357/vector/convertible-super-sports-car-vehicle-transportation-bright-color-for-coloring-page-children.jpg?s=612x612&w=0&k=20&c=BkZCgGFRylr72aKQ9eoRfn4-N3RRne7c0bfxmJ9_g2Y=" alt="" />
-            </Marquee>
-            <Marquee
-            className='text-danger'
-            >
-                <img className='img-fluid gallary-img' src="https://media.istockphoto.com/id/1296677357/vector/convertible-super-sports-car-vehicle-transportation-bright-color-for-coloring-page-children.jpg?s=612x612&w=0&k=20&c=BkZCgGFRylr72aKQ9eoRfn4-N3RRne7c0bfxmJ9_g2Y=" alt="" />
-                <img className='img-fluid gallary-img' src="https://media.istockphoto.com/id/1296677357/vector/convertible-super-sports-car-vehicle-transportation-bright-color-for-coloring-page-children.jpg?s=612x612&w=0&k=20&c=BkZCgGFRylr72aKQ9eoRfn4-N3RRne7c0bfxmJ9_g2Y=" alt="" />
-                <img className='img-fluid gallary-img' src="https://media.istockphoto.com/id/1296677357/vector/convertible-super-sports-car-vehicle-transportation-bright-color-for-coloring-page-children.jpg?s=612x612&w=0&k=20&c=BkZCgGFRylr72aKQ9eoRfn4-N3RRne7c0bfxmJ9_g2Y=" alt="" />
-                <img className='img-fluid gallary-img' src="https://media.istockphoto.com/id/1296677357/vector/convertible-super-sports-car-vehicle-transportation-bright-color-for-coloring-page-children.jpg?s=612x612&w=0&k=20&c=BkZCgGFRylr72aKQ9eoRfn4-N3RRne7c0bfxmJ9_g2Y=" alt="" />
-            </Marquee>
+        <div>
+            <div className="gallery-text my-5 fs-3 w-75 mx-auto text-center">
+                <span className="fw-bold display-5">Discover ToyVerse Delights</span><br />An awe-inspiring gallery where children's dreams become a captivating reality!
+            </div>
+            <div className="mt-5">
+                <Marquee speed={75}>
+                    {photos_one.map((photo) => (
+                        <GalleryOne key={photo.id} photo={photo}></GalleryOne>
+                    ))}
+                </Marquee>
+                <Marquee direction="right" className="mt-5" speed={75}>
+                    {photos_two.map((photo) => (
+                        <GalleryTwo key={photo.id} photo={photo}></GalleryTwo>
+                    ))}
+                </Marquee>
+            </div>
         </div>
     );
 };
 
-export default Gallary;
+export default Gallery;
