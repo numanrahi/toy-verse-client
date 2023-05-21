@@ -5,7 +5,7 @@ import { AuthContext } from '../../Providers/AuthProvider';
 
 const Footer = () => {
 
-    const {user} = useContext(AuthContext)
+    const { user } = useContext(AuthContext)
 
     return (
         <div className='my-5'>
@@ -19,12 +19,12 @@ const Footer = () => {
                         <div className='d-grid'>
                             <Link className='text-decoration-none' to="/">Home</Link>
                             <Link className='text-decoration-none' to="/blog">Blog</Link>
+                            <Link className='text-decoration-none' to="/alltoys">All Toy</Link>
                             {
                                 user?.email &&
                                 (
                                     <>
                                         <Link className='text-decoration-none' to="/addatoy">Add A Toy</Link>
-                                        <Link className='text-decoration-none' to="/alltoys">All Toy</Link>
                                         <Link className='text-decoration-none' to="/mytoys">My Toys</Link>
                                     </>
                                 )
