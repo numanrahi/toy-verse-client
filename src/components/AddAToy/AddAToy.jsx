@@ -46,7 +46,7 @@ const AddAToy = () => {
 
     return (
         <div>
-            <div className='fs-2 m-2 '>Add a toy</div>
+            <div className='fs-2 m-2 text-center'>Add a toy</div>
             <Form onSubmit={handleAddToy}>
                 <Form.Group className="mb-3 w-50 mx-auto" controlId="formBasicEmail">
                     <Form.Label>Photo URL</Form.Label>
@@ -106,26 +106,6 @@ const AddAToy = () => {
                     <input type="submit" className='btn btn-primary text-center w-50' value="Add A Toy" />
                 </div>
             </Form>
-            {/* <div className="md:flex mb-8">
-                <div className="form-control md:w-1/2">
-                    <label className="label">
-                        <span className="label-text">Coffee Name</span>
-                    </label>
-                    <label className="input-group">
-                        <span>Name</span>
-                        <input type="text" name="name" placeholder="Coffee Name" className="input input-bordered w-full" />
-                    </label>
-                </div>
-                <div className="form-control md:w-1/2 ml-4">
-                    <label className="label">
-                        <span className="label-text">Available Quantity</span>
-                    </label>
-                    <label className="input-group">
-                        <span>Name</span>
-                        <input type="text" name="quantity" placeholder="Available Quantity" className="input input-bordered w-full" />
-                    </label>
-                </div>
-            </div> */}
         </div>
     );
 };

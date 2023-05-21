@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-// import "./Gallery.css";
 import Marquee from "react-fast-marquee";
 import GalleryOne from "./GalleryOne/GalleryOne";
 import GalleryTwo from "./GalleryTwo/GalleryTwo";

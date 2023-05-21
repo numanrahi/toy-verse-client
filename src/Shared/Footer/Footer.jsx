@@ -1,8 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { TbFlower } from 'react-icons/tb';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../Providers/AuthProvider';
 
 const Footer = () => {
+
+    const {user} = useContext(AuthContext)
+
     return (
         <div className='my-5'>
             <section className='d-flex justify-content-around'>
@@ -15,9 +19,16 @@ const Footer = () => {
                         <div className='d-grid'>
                             <Link className='text-decoration-none' to="/">Home</Link>
                             <Link className='text-decoration-none' to="/blog">Blog</Link>
-                            <Link className='text-decoration-none' to="/addatoy">Add A Toy</Link>
-                            <Link className='text-decoration-none' to="/alltoys">All Toy</Link>
-                            <Link className='text-decoration-none' to="/">My Toy</Link>
+                            {
+                                user?.email &&
+                                (
+                                    <>
+                                        <Link className='text-decoration-none' to="/addatoy">Add A Toy</Link>
+                                        <Link className='text-decoration-none' to="/alltoys">All Toy</Link>
+                                        <Link className='text-decoration-none' to="/mytoys">My Toys</Link>
+                                    </>
+                                )
+                            }
                         </div>
                     </div>
                     <div className='mx-5'>

@@ -20,6 +20,8 @@ import AddAToy from './components/AddAToy/AddAToy';
 import AllToys from './components/AllToys/AllToys';
 import PrivateRoute from './Routes/PrivateRoute';
 import Details from './LayOut/Details/Details';
+import MyToys from './components/MyToys/MyToys';
+import UpdateToy from './components/UpdateToy/UpdateToy';
 
 const router = createBrowserRouter([
   {
@@ -49,6 +51,16 @@ const router = createBrowserRouter([
       {
         path: '/alltoys',
         element: <AllToys></AllToys>
+      },
+      {
+        path: '/mytoys',
+        element: <PrivateRoute><MyToys></MyToys></PrivateRoute>
+      },
+      {
+        path: '/update/:id',
+        element: <PrivateRoute><UpdateToy></UpdateToy></PrivateRoute>,
+        loader: ({params})=> 
+        fetch(`https://assignment-11-server-xi-sand.vercel.app/toy/${params.id}`)
       },
       {
         path: '/details/:id',

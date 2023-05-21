@@ -40,7 +40,7 @@ const NavBar = () => {
                     (
                         <>
                             <div>
-                                <Link className="fs-4 text-decoration-none">My Toys</Link>
+                                <Link to="/mytoys" className="fs-4 text-decoration-none">My Toys</Link>
                             </div>
                             <div>
                                 <Link to="/addatoy" className="fs-4 text-decoration-none">Add A Toy</Link>
@@ -56,7 +56,6 @@ const NavBar = () => {
                 {
                     user ? (
                         <div className="col-md-3 col-10 d-flex justify-content-center align-items-center p-0">
-                            {/* <div><img className="rounded-circle " src={url} alt="" /></div> */}
                             {
                                 user?.photoURL ?
                                     <div
