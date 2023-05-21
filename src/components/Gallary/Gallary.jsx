@@ -9,13 +9,13 @@ const Gallery = () => {
     const [photos_two, setPhotos_two] = useState([]);
 
     useEffect(() => {
-        fetch("http://localhost:5000/gallery-one")
+        fetch("https://assignment-11-server-xi-sand.vercel.app/gallery-one")
             .then((res) => res.json())
             .then((data) => setPhotos_one(data));
     }, []);
 
     useEffect(() => {
-        fetch("http://localhost:5000/gallery-two")
+        fetch("https://assignment-11-server-xi-sand.vercel.app/gallery-two")
             .then((res) => res.json())
             .then((data) => setPhotos_two(data));
     }, []);

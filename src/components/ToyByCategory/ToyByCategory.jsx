@@ -12,7 +12,7 @@ const ToyByCategory = () => {
     };
 
     useEffect(() => {
-        fetch("http://localhost:5000/toy")
+        fetch("https://assignment-11-server-xi-sand.vercel.app/toy")
             .then((res) => res.json())
             .then((data) => {
                 const category_data = data.filter(

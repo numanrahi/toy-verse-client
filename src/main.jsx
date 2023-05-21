@@ -56,23 +56,8 @@ const router = createBrowserRouter([
           <PrivateRoute><Details></Details></PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/toy/${params.id}`),
+          fetch(`https://assignment-11-server-xi-sand.vercel.app/toy/${params.id}`),
       }
-
-      /**
-       * {
-    path: "/details/:ID",
-    element: (
-      <PrivateRoute>
-        <Details></Details>
-      </PrivateRoute>
-    ),
-    loader: ({ params }) =>
-      fetch(
-        https://toytopia-server-theta.vercel.app/all-toys/${params.ID}
-      ),
-  },
-       * */
     ]
   },
   {
