@@ -4,6 +4,7 @@ import KidsToys from "../components/KidsToys/KidsToys";
 import useTitle from "../hooks/useTitle";
 import Gallery from "../components/Gallary/Gallary";
 import Footer from "../Shared/Footer/Footer";
+import ToyByCategory from "../components/ToyByCategory/ToyByCategory";
 
 const Main = () => {
     useTitle('Home')
@@ -12,6 +13,7 @@ const Main = () => {
             <NavBar></NavBar>
             <Banner></Banner>
             <KidsToys></KidsToys>
+            <ToyByCategory></ToyByCategory>
             <Gallery></Gallery>
             <Footer></Footer>
         </div>
