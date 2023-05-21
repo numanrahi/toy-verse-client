@@ -9,9 +9,9 @@ const AddAToy = () => {
     const handleAddToy = event => {
         event.preventDefault();
         const form = event.target;
-        const url = form.url.value;
-        const toyName = form.toyName.value;
-        const sellerName = form.sellerName.value;
+        const photo = form.photo.value;
+        const toy_name = form.toy_name.value;
+        const seller_name = form.seller_name.value;
         const email = form.email.value;
         const category = form.category.value;
         const price = form.price.value;
@@ -19,7 +19,7 @@ const AddAToy = () => {
         const quantity = form.quantity.value;
         const details = form.details.value;
 
-        const newToy = { url, toyName, sellerName, email, category, price, rating, quantity, details }
+        const newToy = { photo, toy_name, seller_name, email, category, price, rating, quantity, details }
         console.log(newToy);
 
         fetch('http://localhost:5000/toy',{
@@ -50,15 +50,15 @@ const AddAToy = () => {
             <Form onSubmit={handleAddToy}>
                 <Form.Group className="mb-3 w-50 mx-auto" controlId="formBasicEmail">
                     <Form.Label>Photo URL</Form.Label>
-                    <Form.Control type="text" name='url' placeholder="Enter Photo of Toy" />
+                    <Form.Control type="text" name='photo' placeholder="Enter Photo of Toy" />
                 </Form.Group>
                 <Form.Group className="mb-3 w-50 mx-auto" controlId="formBasicPassword">
                     <Form.Label>Toy Name</Form.Label>
-                    <Form.Control type="text" name='toyName' placeholder="Enter The Name of Toy" />
+                    <Form.Control type="text" name='toy_name' placeholder="Enter The Name of Toy" />
                 </Form.Group>
                 <Form.Group className="mb-3 w-50 mx-auto" controlId="formBasicPassword">
                     <Form.Label>Seller Name</Form.Label>
-                    <Form.Control type="text" name='sellerName' placeholder="Name of The Seller" />
+                    <Form.Control type="text" name='seller_name' placeholder="Name of The Seller" />
                 </Form.Group>
                 <Form.Group className="mb-3 w-50 mx-auto" controlId="formBasicPassword">
                     <Form.Label>Email</Form.Label>

@@ -17,6 +17,7 @@ import AuthProvider from './Providers/AuthProvider';
 import PageNotFound from './LayOut/pageNotFound';
 import Blog from './components/Blog/Blog';
 import AddAToy from './components/AddAToy/AddAToy';
+import AllToys from './components/AllToys/AllToys';
 
 const router = createBrowserRouter([
   {
@@ -42,6 +43,10 @@ const router = createBrowserRouter([
       {
         path: '/addatoy',
         element: <AddAToy></AddAToy>
+      },
+      {
+        path: '/alltoys',
+        element:<AllToys></AllToys>
       }
     ]
   },

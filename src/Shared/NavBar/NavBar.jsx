@@ -33,7 +33,7 @@ const NavBar = () => {
                     <Link className="fs-4 text-decoration-none">Home</Link>
                 </div>
                 <div>
-                    <Link className="fs-4 text-decoration-none">All Toys</Link>
+                    <Link to="/alltoys" className="fs-4 text-decoration-none">All Toys</Link>
                 </div>
                 {
                     user?.email &&
