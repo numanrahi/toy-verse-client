@@ -22,26 +22,26 @@ const AddAToy = () => {
         const newToy = { photo, toy_name, seller_name, email, category, price, rating, quantity, details }
         console.log(newToy);
 
-        fetch('http://localhost:5000/toy',{
+        fetch('http://localhost:5000/toy', {
             method: "POST",
             headers: {
                 'content-type': 'application/json'
             },
             body: JSON.stringify(newToy)
         })
-        .then(res=> res.json())
-        .then(data=> {
-            console.log(data);
-            if(data.insertedId){
-                Swal.fire({
-                    title: 'Success!',
-                    text: 'Toy added successfully',
-                    icon: 'success',
-                    confirmButtonText: 'Cool'
-                  })
-                  form.reset()
-            }
-        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                if (data.insertedId) {
+                    Swal.fire({
+                        title: 'Success!',
+                        text: 'Toy added successfully',
+                        icon: 'success',
+                        confirmButtonText: 'Cool'
+                    })
+                    form.reset()
+                }
+            })
     }
 
     return (
@@ -73,8 +73,25 @@ const AddAToy = () => {
                     <Form.Control type="text" name='price' placeholder="Price" />
                 </Form.Group>
                 <Form.Group className="mb-3 w-50 mx-auto" controlId="formBasicPassword">
-                    <Form.Label>Rating</Form.Label>
-                    <Form.Control type="text" name='rating' placeholder="Rating" />
+                    <select
+                        className="input-field form-select-lg rounded-0 w-100"
+                        name="rating"
+                        defaultValue={"5"}
+                    >
+                        <option value="1">&#9733;</option>
+                        <option value="2">
+                            &#9733;&#9733;
+                        </option>
+                        <option value="3">
+                            &#9733;&#9733;&#9733;
+                        </option>
+                        <option value="4">
+                            &#9733;&#9733;&#9733;&#9733;
+                        </option>
+                        <option value="5">
+                            &#9733;&#9733;&#9733;&#9733;&#9733;
+                        </option>
+                    </select>
                 </Form.Group>
                 <Form.Group className="mb-3 w-50 mx-auto" controlId="formBasicPassword">
                     <Form.Label>Available quantity</Form.Label>

@@ -18,6 +18,8 @@ import PageNotFound from './LayOut/pageNotFound';
 import Blog from './components/Blog/Blog';
 import AddAToy from './components/AddAToy/AddAToy';
 import AllToys from './components/AllToys/AllToys';
+import PrivateRoute from './Routes/PrivateRoute';
+import Details from './LayOut/Details/Details';
 
 const router = createBrowserRouter([
   {
@@ -42,12 +44,35 @@ const router = createBrowserRouter([
       },
       {
         path: '/addatoy',
-        element: <AddAToy></AddAToy>
+        element: <PrivateRoute><AddAToy></AddAToy></PrivateRoute>
       },
       {
         path: '/alltoys',
-        element:<AllToys></AllToys>
+        element: <AllToys></AllToys>
+      },
+      {
+        path: '/details/:id',
+        element: (
+          <PrivateRoute><Details></Details></PrivateRoute>
+        ),
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/toy/${params.id}`),
       }
+
+      /**
+       * {
+    path: "/details/:ID",
+    element: (
+      <PrivateRoute>
+        <Details></Details>
+      </PrivateRoute>
+    ),
+    loader: ({ params }) =>
+      fetch(
+        https://toytopia-server-theta.vercel.app/all-toys/${params.ID}
+      ),
+  },
+       * */
     ]
   },
   {
